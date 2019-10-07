@@ -1,0 +1,109 @@
+@import '../../styles/style.scss';
+
+h1, h2, .header__inputIcon, .header__mobileIcon {
+  cursor: pointer;
+}
+
+header {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  img {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+h1 {
+  color: $red;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.header__mobileContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 5rem;
+  padding-top: 0.25rem;
+}
+
+.header__desktopContainer {
+  display: none;
+}
+
+@include desktop {
+
+  header {
+    padding: 1rem;
+  }
+
+  h1 {
+    margin-top: 0.5rem;
+  }
+
+  .header__mobileContainer {
+    display: none;
+  }
+
+  .header__desktopContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    margin-left: 2rem;
+
+    h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    h2:hover {
+      color: $red;
+    }
+
+    input {
+      min-width: 10rem;
+      height: 2.5rem;
+      background-color: #F3F7FB;
+      border-radius: 0.25rem;
+      border: 1px solid lightgrey;
+      padding-left: 1rem;
+      font-size: 1rem;
+      flex: 1;
+      margin-right: 1.5rem;
+    }
+
+    .header__inputIcon {
+      position: absolute;
+      right: 39rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      width: 36rem;
+    }
+
+    .header__verticalLine {
+      width: 1px;
+      height: 30px;
+      margin-top: 3px;
+      border-top: none;
+      border-left: none;
+      border-bottom: none;
+      border-right: 1px solid lightgray;
+    }
+
+    #header__heading--red {
+      color: $red;
+    }
+    #header__heading--red:hover {
+      color: black;
+    }
+  }
+}
