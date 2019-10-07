@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { getCategoryList } from './state/category';
 import './Category.scss';
 import CategoryItem from '../categoryItem/CategoryItem';
+import {getProductImageLink} from '../../utils/imageUtils';
 
 export default class Category extends Component {
   state = { 
@@ -11,13 +12,9 @@ export default class Category extends Component {
   componentDidMount() {
     const loadedData = getCategoryList();
     this.setState({ category: loadedData });
+
     this.setState({ isLoading: false });
   }
-
-  /*{this.state.category.category.products.map((item) => {
-    //return <CategoryItem name="name"/>
-    return <p>hej</p>
-  })}*/
 
   render() {
     /*
@@ -31,7 +28,17 @@ export default class Category extends Component {
     return (
       <ul>
         {this.state.category.products.map((item) => {
-          return <CategoryItem name={item.name}/>
+          return <CategoryItem 
+                    key={item.id} 
+                    name={item.name} 
+                    imageUrl={getProductImageLink(item)} 
+                    description={item.description}
+                    price={item.cheapestPrice.amount}
+                    rating={item.averageRating}
+                    numberOfMerchants={item.numberOfMerchants}
+                    rank={item.rank}
+                  />
+          
         })}
       </ul>
     );
