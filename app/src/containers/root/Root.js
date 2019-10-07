@@ -1,13 +1,12 @@
 import React from 'react';
 import Category from '../category/Category';
 import './Root.scss';
+import Header from '../header/Header';
 
 export default function App() {
   return (
     <div>
-      <header className="header">
-        <strong className="header__pricerunner">PriceRunner</strong>
-      </header>
+      <Header />
       <div className="container">
         <div className="content">
           <Category />
