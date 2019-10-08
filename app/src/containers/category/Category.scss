@@ -14,10 +14,16 @@
 
 @include desktop {
   .categoryContainer__headingsContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     text-align: center;
-    justify-content: center;
-    flex-grow: 1;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
   }
 
   .categoryContainer__name {
@@ -26,9 +32,13 @@
   }
 
   .categoryContainer__headingsSubContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 45vw;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 
   .categoryContainer__headingsSubContainer h3 {
