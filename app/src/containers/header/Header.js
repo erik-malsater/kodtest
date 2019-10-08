@@ -11,7 +11,7 @@ export default class Header extends Component {
           <img src={require("../../images/menu-icon.png")} alt="Menu icon" className="header__mobileIcon"/>
         </div>
         <div className="header__desktopContainer">
-          <img src="../../images/search-icon.png" className="header__inputIcon"/>
+          <img src={require("../../images/search-icon.png")} alt="Search icon" className="header__inputIcon"/>
           <input type="text" placeholder="Vad letar du efter idag?"/>
           <nav>
             <h2>Produkter</h2>

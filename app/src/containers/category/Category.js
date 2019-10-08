@@ -26,7 +26,18 @@ export default class Category extends Component {
       
     }
     return (
-      <ul>
+      <div className="categoryContainer">
+
+        <div className="categoryContainer__headingsContainer">
+          <h3 className="categoryContainer__name">Namn</h3>
+          <div className="categoryContainer__headingsSubContainer">
+            <h3 className="categoryContainer__price">Pris</h3>
+            <h3 className="categoryContainer__rating">Omdöme</h3>
+            <h3 className="categoryContainer__numberOfMerchants">Butiker</h3>
+            <h3 className="categoryContainer__rank">Rank</h3>
+          </div>
+
+        </div>
         {this.state.category.products.map((item) => {
           return <CategoryItem 
                     key={item.id} 
@@ -34,13 +45,13 @@ export default class Category extends Component {
                     imageUrl={getProductImageLink(item)} 
                     description={item.description}
                     price={item.cheapestPrice.amount}
-                    rating={item.averageRating}
+                    rating={item.rating.averageRating}
                     numberOfMerchants={item.numberOfMerchants}
                     rank={item.rank}
                   />
           
         })}
-      </ul>
+      </div>
     );
   }
 }
